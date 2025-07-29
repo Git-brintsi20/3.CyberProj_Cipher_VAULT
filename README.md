@@ -37,3 +37,67 @@ The **Encrypted File Vault** is a robust, full-stack MERN (MongoDB, Express.js, 
 
 ---
 
+### 🌟 Core Features & Technologies
+
+#### Frontend Experience (React, Vite, Shadcn UI, TailwindCSS)
+* **Intuitive Drag-and-Drop Uploads:** Seamless file uploads with smooth animations and clear progress indicators.
+* **Dynamic File Management Dashboard:** Modern grid/list view toggle for easy navigation and management of encrypted files.
+* **Interactive Progress Bars:** Real-time upload/download progress with fluid animations.
+* **Secure Authentication Interfaces:** Dedicated interfaces for 2FA setup (QR code generation) and Email OTP verification.
+* **Safe File Preview:** In-browser preview capabilities for secure file types (e.g., images, PDFs) after decryption.
+* **Elegant Modals:** Smooth modal animations for all file operations (delete, share, preview).
+
+#### Backend Security (Node.js, Express.js, MongoDB)
+* **File Encryption (AES-256-GCM):** Industry-standard symmetric encryption for all uploaded files.
+    * **Why AES-256-GCM?** Chosen for its robust encryption (256-bit key length) combined with **Authenticated Encryption with Associated Data (AEAD)**. GCM mode provides crucial **integrity checking** and **authenticity verification** via an authentication tag, preventing sophisticated tampering attacks.
+* **Unique Encryption Keys per User:** Each user's files are encrypted with keys derived uniquely for them, enhancing isolation.
+* **2FA Implementation (TOTP with `speakeasy`):** Time-based One-Time Passwords for an extra layer of login security.
+* **Email OTP Verification (`nodemailer`):** Secondary verification via email for critical actions or login.
+* **Secure File Storage:** Encrypted files stored in a non-web-accessible directory with unique, unguessable filenames (UUIDs).
+* **Metadata Encryption:** Sensitive file metadata (IVs, Auth Tags, checksums) are securely stored alongside the encrypted content.
+* **File Integrity Verification:** Checksums (SHA256) are generated on original files and verified upon download to detect any unauthorized modifications.
+* **Secure Key Derivation (PBKDF2):** Passwords are never stored directly; strong, user-specific encryption keys are derived using PBKDF2, resisting brute-force and rainbow table attacks.
+
+#### Comprehensive Security Implementations
+* **Client-Side File Type Validation:** Initial validation for common file types.
+* **Server-Side File Scanning (Conceptual):** Architecture supports integration with external virus scanning services.
+* **Rate Limiting:** Prevents brute-force attacks on authentication endpoints and abuse of upload/download features.
+* **User Activity Logging:** Detailed audit trail for significant user actions (logins, uploads, downloads, shares).
+* **Session Timeout Management:** JWT-based session management with configurable expiry.
+* **Password Strength Enforcement:** Ensures users create strong, complex passwords during registration.
+
+#### Advanced Capabilities
+* **File Sharing with Temporary Links:** Securely share files via time-limited, one-time-use links.
+* **Audit Trail for File Access:** Comprehensive logging provides visibility into all file operations.
+* **File Versioning:** Maintain encrypted historical versions of files.
+* **Recovery Key Generation (Conceptual):** Supports the creation of recovery keys for account access.
+
+---
+
+### 🛠️ Technologies Used
+
+**Frontend:**
+* **React:** Frontend library for building user interfaces.
+* **Vite:** Fast development server and build tool.
+* **TypeScript:** Type-safe JavaScript.
+* **Shadcn UI & Radix UI:** Beautiful, accessible, and customizable UI components.
+* **Tailwind CSS:** Utility-first CSS framework for rapid styling.
+* **`@tanstack/react-query`:** Powerful data fetching and caching for API interactions.
+* **`react-router-dom`:** Declarative routing for React.
+* **`react-hook-form` & `zod`:** Robust form validation.
+* `input-otp`, `sonner`, `lucide-react`, etc.
+
+**Backend:**
+* **Node.js & Express.js:** Backend runtime and web framework for RESTful APIs.
+* **MongoDB & Mongoose:** NoSQL database and ODM for data storage.
+* **`bcryptjs`:** Password hashing.
+* **`jsonwebtoken`:** JWT for authentication.
+* **`multer`:** Handling file uploads.
+* **`crypto` (Node.js built-in):** AES-256-GCM encryption, SHA256 hashing.
+* **`speakeasy` & `qrcode`:** For 2FA implementation.
+* **`nodemailer`:** Email sending for OTPs.
+* **`express-rate-limit`:** Middleware for rate limiting.
+* **`dotenv`:** Environment variable management.
+
+---
+

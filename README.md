@@ -179,11 +179,5 @@ Contributions are welcome! If you have suggestions or find issues, please open a
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
 
-### 🧑‍💻 Connect with me
-
-[LinkedIn Profile](YOUR_LINKEDIN_PROFILE_URL) | [GitHub Profile](YOUR_GITHUB_PROFILE_URL)
-
----
 

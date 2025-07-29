@@ -101,3 +101,89 @@ The **Encrypted File Vault** is a robust, full-stack MERN (MongoDB, Express.js, 
 
 ---
 
+### 💻 Getting Started
+
+Follow these steps to set up and run the Encrypted File Vault locally.
+
+**Prerequisites:**
+* [Node.js](https://nodejs.org/) (v18.x or higher recommended)
+* [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
+* [MongoDB](https://www.mongodb.com/try/download/community) (Community Server or a MongoDB Atlas Free Tier account)
+* [Git](https://git-scm.com/downloads)
+
+**1. Clone the Repository:**
+   ```bash
+   git clone [https://github.com/Git-brintsi20/1.CyberProj_Mern_Auth_Sys.git](https://github.com/Git-brintsi20/1.CyberProj_Mern_Auth_Sys.git)
+   cd EncryptedFileVault
+
+```
+
+**2. Backend Setup:**
+    ```bash
+    cd server
+    npm install
+    ```
+    Create a `.env` file in the `server/` directory and add your environment variables:
+    ```env
+    # .env in server/
+    NODE_ENV=development
+    PORT=5000
+    MONGO_URI=mongodb://localhost:27017/filevault # Or your MongoDB Atlas URI
+    JWT_SECRET=YOUR_SUPER_STRONG_AND_RANDOM_JWT_SECRET_KEY
+    FILE_ENCRYPTION_SECRET=ANOTHER_VERY_LONG_AND_RANDOM_KEY_FOR_FILES
+    EMAIL_USER=your_email@example.com
+    EMAIL_PASS=your_email_password_or_app_specific_password # Use app password for Gmail
+    EMAIL_SERVICE=gmail # e.g., 'gmail', 'outlook', 'sendgrid'
+    ```
+    **Remember to never commit your `.env` file to Git!**
+
+    Run the backend:
+    ```bash
+    npm run dev
+    ```
+    The backend server should start on `http://localhost:5000`.
+
+**3. Frontend Setup:**
+    Open a new terminal and navigate to the `client/` directory:
+    ```bash
+    cd ../client
+    npm install
+    ```
+    Run the frontend:
+    ```bash
+    npm run dev
+    ```
+    The frontend application should open in your browser, typically at `http://localhost:5173` (Vite's default).
+    You can now interact with the Encrypted File Vault!
+
+---
+
+### 🔮 Future Enhancements
+
+* **Public Key Cryptography for Sharing:** Implement asymmetric encryption (e.g., RSA) for secure key exchange when sharing files, allowing recipients to decrypt with their private keys.
+* **Client-Side Encryption:** Explore options for encrypting files directly in the browser before upload, minimizing plaintext exposure on the server (though more complex for key management).
+* **Integration with Cloud Storage:** Allow users to connect to their own cloud storage (S3, Google Cloud Storage) as a backend for encrypted files.
+* **Real-time Notifications:** Implement WebSockets for real-time notifications on file uploads, shares, or access.
+* **Advanced Analytics & Reporting:** More detailed dashboards for usage patterns, security events, etc.
+* **Mobile App Companion:** Develop a native mobile application.
+
+---
+
+### 🤝 Contributing
+
+Contributions are welcome! If you have suggestions or find issues, please open an issue or submit a pull request.
+
+---
+
+### 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+### 🧑‍💻 Connect with me
+
+[LinkedIn Profile](YOUR_LINKEDIN_PROFILE_URL) | [GitHub Profile](YOUR_GITHUB_PROFILE_URL)
+
+---
+
